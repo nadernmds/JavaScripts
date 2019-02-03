@@ -14,6 +14,11 @@ var mapProp= {
     zoom:12,
 };
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var s=new google.maps.LatLng(51.508742,-0.120850);
+var w=new google.maps.Marker({
+      position: s,
+      map: map
+    });
 var marker;
 
 function placeMarker(location) {
@@ -29,7 +34,8 @@ function placeMarker(location) {
 
 google.maps.event.addListener(map, 'click', function(event) {
   placeMarker(event.latLng);
-  alert(event.latLng.lat()+event.latLng.lng());
+  alert(event.latLng.lat());
+  alert(event.latLng.lng());
 });
 // google.maps.event.addListener(map, 'click', function(event) {
 //   placeMarker(map, event.latLng);
